@@ -219,41 +219,67 @@ body {
 }
 
 /* ==========================================
-   5. Listing Images(show.ejs)
+   5. Listing Images (show.ejs)
    ========================================== */
 
-/* 1. Expands the gallery container to fit side-by-side */
 .listing-image-gallery {
     display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
     gap: 12px;
     width: 100%;
-    max-width: 1132px; /* Wide enough for both sections */
+    max-width: 1132px;
     margin-bottom: 2rem;
 }
 
-/* 2. Left Big Image (560px wide) */
 .main-listing-img {
-    width: 560px;
-    height: 325px;
+    width: 100%;
+    height: 280px;
     object-fit: cover;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
+    border-radius: 1rem; /* Rounded all around on mobile */
 }
 
-/* 3. Right Side 2x2 Grid Container (560px wide total) */
 .grid-images-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid on mobile */
     gap: 12px;
-    width: 560px;
+    width: 100%;
 }
 
-/* 4. Individual small grid images */
 .grid-listing-img {
     width: 100%;
-    height: 156.5px; /* Exactly half of 325px minus gap space */
+    height: 140px;
     object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Desktop & Tablet Layout (min-width: 768px) */
+@media (min-width: 768px) {
+    .listing-image-gallery {
+        display: flex;
+        flex-direction: row; /* Side-by-side on desktop */
+    }
+
+    .main-listing-img {
+        width: 560px;
+        height: 325px;
+        border-top-left-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .grid-images-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 12px;
+        width: 560px;
+    }
+
+    .grid-listing-img {
+        height: 156.5px;
+        border-radius: 0;
+    }
 }
 
 /* ==========================================
