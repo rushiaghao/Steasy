@@ -1,14 +1,17 @@
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
-    <div class="container-fluid ">
-        <div nav></div>
-        <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass" style="color: rgb(245, 3, 3);"></i></a>
-        <a class="navbar-brand" href="/listings">Steasy</a>
+    <div class="container-fluid">
+        <!-- Combined into a single link with flexbox to keep icon and text joined -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/listings">
+            <i class="fa-regular fa-compass" style="color: rgb(245, 3, 3);"></i>
+            <span class="logo">Steasy</span>
+        </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
             <span class="navbar-toggler-icon"></span>
         </button>
     
-        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto d-flex flex-col gap-3 ">
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto d-flex flex-col gap-3">
                 <a class="nav-link" href="/listings/new">Become a host</a>
                 <% if(!currUser) { %>
                 <a class="nav-link" href="/signup"><b>Sign up</b></a>
@@ -20,4 +23,4 @@
             </div>
         </div>
     </div>
-</nav>      
+</nav>
