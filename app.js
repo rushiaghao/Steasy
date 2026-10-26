@@ -26,7 +26,7 @@ dns.setServers(['8.8.8.8', '8.8.4.4']);
 // Then load dotenv and connect to MongoDB
 require('dotenv').config();
 
-const dbUrl = process.env.ATLASDB_URL;
+const dbUrl = process.env.MONGO_URL;
 main()
     .then(() => {
         console.log("connected to DB");
